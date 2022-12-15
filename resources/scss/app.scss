@@ -1,1 +1,229 @@
-@import '~bootstrap/scss/bootstrap'
+@use './partials/mixins' as *;
+@use './partials/variables' as *;
+@import '~bootstrap/scss/bootstrap';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto' , sans-serif;
+}
+
+// img{
+//     max-width: 100%;
+// }
+
+header{
+    @include dflex;
+    justify-content: space-between;
+
+    ul{
+        list-style: none;
+        margin: 2.5rem 1rem 0rem;
+        @include dflex;
+
+        li a{
+            display: inline-block;
+            padding: 1rem;
+            text-decoration: none;
+            color: $black;
+            font-weight: 600;
+            padding-bottom: 50px;
+
+            &.active,
+            &:hover{
+                color: $blue;
+                border-bottom: 3px solid $blue;
+            }
+        }
+    }
+}
+
+.bg-social{
+    justify-content: space-between;
+    background-color: $darkgray;
+    padding: 0.75rem;
+
+}
+button{
+    text-transform: uppercase;
+    background-color: $darkgray;
+    color: $textwhite;
+    border: 1px solid $blue;
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover{
+        color: $black;
+        background-color: $textwhite;
+    }
+
+}
+.social{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    ul{
+        list-style: none;
+        padding: 1rem;
+        @include dflex;
+        align-items: unset;
+        a{
+            text-decoration: none;
+            font-size: 1.75rem;
+            color: $blue;
+            &.active,
+            &:hover{
+                color: $textwhite;
+            }
+        }
+        li {
+            padding: 0 1rem;
+        }
+    }
+}
+
+.jumbo {
+    background-image: url("/img/jumbotron.jpg");
+    background-size: cover;
+    height: 400px;
+
+}
+
+#current{
+    align-items: flex-end;
+    margin-right: 1150px;
+    margin-top: -20px;
+    font-weight: 600;
+    border-radius: 0%;
+}
+.products {
+    padding: 0rem 1rem;
+    text-align: center;
+    background-color: $black;
+
+    .row {
+        flex-flow: wrap;
+        .col {
+            flex-basis: calc(100% / 6);
+            padding: 1rem;
+
+            img{
+                width: 200px;
+                height: 200px;
+                object-fit: cover ;
+                object-position: 50% 0%;
+            }
+
+            p{
+                text-transform: uppercase;
+                font-size: 0.95rem;
+                margin-top: 1rem;
+                text-align: start;
+                color: $textwhite;
+            }
+        }
+    }
+    button{
+        color: $textwhite;
+        border-radius: 0%;
+        width: 200px;
+        margin-bottom: 1rem;
+    }
+
+}
+
+.shop{
+    background-color: $blue;
+
+    nav{
+
+        ul{
+        list-style: none;
+        padding: 2.5rem;
+        margin-bottom: unset;
+        @include dflex;
+
+        li a{
+            @include dflex;
+            padding: 1rem;
+            text-decoration: none;
+            color: $textwhite;
+            &.active,
+            &:hover{
+                color: $black;
+            }
+            img{
+                height: 60px;
+                margin-right: 1rem;
+            }
+
+        }
+    }
+
+    }
+
+}
+
+
+footer{
+    background-image: url("/img/footer-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    // padding: 3rem;
+
+
+
+
+
+    .cols{
+
+        display: flex;
+        padding: 3rem 0;
+        .footer-links{
+
+            flex-basis: calc(100% / 7);
+            padding: 0 1rem;
+        }
+
+        h4{
+            text-transform: uppercase;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1rem 0;
+            color: $textwhite;
+        }
+
+        ul{
+            list-style: none;
+            padding: unset;
+
+            li a{
+                display: inline-block;
+                margin-bottom: 0.25rem;
+                text-decoration: none;
+                font-size: 0.875rem;
+                // padding: 1rem;
+                color: $textgray;
+
+
+                &.active,
+                &:hover{
+                color: $blue;
+            }
+            }
+        }
+    }
+}
+.logo{
+        background-image: url("/img/dc-logo-bg.png");
+        background-repeat: no-repeat;
+        background-position: 1000px;
+    }
+
